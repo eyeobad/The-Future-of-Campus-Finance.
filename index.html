@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Using a more robust font-family definition */
         body {
             font-family: 'Inter', sans-serif;
         }
@@ -18,34 +17,48 @@
         /* --- Aurora Background & Animation --- */
         .aurora-blob {
             position: absolute;
-            filter: blur(80px); /* Creates the soft, blurry effect */
-            opacity: 0.4;
+            filter: blur(96px); /* Increased blur for a softer effect */
+            opacity: 0.3;
             border-radius: 50%;
             z-index: 0;
+            transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
         }
 
+        /* --- Mobile-first blob sizes --- */
         .blob-1 {
-            width: 400px;
-            height: 400px;
+            width: 300px;
+            height: 300px;
             background-color: #4f46e5; /* Indigo */
-            animation: moveBlob1 15s infinite alternate;
+            animation: moveBlob1 20s infinite alternate;
         }
 
         .blob-2 {
-            width: 350px;
-            height: 350px;
+            width: 250px;
+            height: 250px;
             background-color: #db2777; /* Fuchsia */
-            animation: moveBlob2 18s infinite alternate;
+            animation: moveBlob2 24s infinite alternate;
+        }
+
+        /* --- Scale up blobs on larger screens --- */
+        @media (min-width: 768px) {
+            .blob-1 {
+                width: 500px;
+                height: 500px;
+            }
+            .blob-2 {
+                width: 450px;
+                height: 450px;
+            }
         }
 
         @keyframes moveBlob1 {
-            from { transform: translate(-20%, -10%) rotate(0deg); }
-            to { transform: translate(20%, 10%) rotate(360deg); }
+            from { transform: translate(-30%, -15%) rotate(0deg); }
+            to { transform: translate(30%, 15%) rotate(360deg); }
         }
 
         @keyframes moveBlob2 {
-            from { transform: translate(20%, 20%) rotate(0deg); }
-            to { transform: translate(-20%, -20%) rotate(360deg); }
+            from { transform: translate(30%, 25%) rotate(0deg); }
+            to { transform: translate(-30%, -25%) rotate(360deg); }
         }
 
         /* --- On-Load Content Animations --- */
@@ -67,19 +80,19 @@
         <div class="aurora-blob blob-2"></div>
     </div>
 
-    <div class="relative min-h-screen flex flex-col items-center justify-center p-4 z-10">
+    <div class="relative min-h-screen flex flex-col items-center justify-center p-6 sm:p-8 z-10">
         <main class="text-center flex flex-col items-center">
             
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight max-w-3xl animate-fadeInUp" style="animation-delay: 200ms;">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter max-w-4xl animate-fadeInUp" style="animation-delay: 200ms;">
                 The Future of Campus Finance.
             </h1>
             
-            <p class="text-lg md:text-xl text-gray-400 mt-6 max-w-xl mx-auto animate-fadeInUp" style="animation-delay: 400ms;">
+            <p class="text-base sm:text-lg md:text-xl text-gray-400 mt-5 sm:mt-6 max-w-md md:max-w-xl mx-auto animate-fadeInUp" style="animation-delay: 400ms;">
                 Get early access. Join the waitlist with your student email to be first in line.
             </p>
 
-            <div class="mt-10 w-full max-w-lg animate-fadeInUp" style="animation-delay: 600ms;">
-                 <div class="bg-white/10 backdrop-blur-md p-2 rounded-xl shadow-2xl border border-white/20">
+            <div class="mt-8 sm:mt-10 w-full max-w-lg animate-fadeInUp" style="animation-delay: 600ms;">
+                 <div class="bg-white/10 backdrop-blur-md p-2 rounded-xl shadow-2xl border border-white/20 min-h-[150px]">
                     <iframe data-tally-src="https://tally.so/embed/nWV5Ea?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="150" frameborder="0" marginheight="0" marginwidth="0" title="Campus Waitlist Signup" class="rounded-lg"></iframe>
                     <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
                  </div>
