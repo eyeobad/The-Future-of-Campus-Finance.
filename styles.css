@@ -1,0 +1,8 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Ensures the Tally iframe blends in */
+iframe[data-tally-src] {
+    border-radius: 12px;
+}

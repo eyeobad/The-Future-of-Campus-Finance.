@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Waitlist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><path fill=%22%23fff%22 d=%22M50,9A41,41,0,1,0,91,50,41,41,0,0,0,50,9Zm0,74A33,33,0,1,1,83,50,33,33,0,0,1,50,83Z%22/><path fill=%22%23fff%22 d=%22M50,42H62a3,3,0,0,0,0-6H41a3,3,0,0,0-3,3V70a3,3,0,0,0,6,0V42H38a3,3,0,0,0,0,6H50a3,3,0,0,0,3-3V39A3,3,0,0,0,50,36h0a3,3,0,0,0,0,6Z%22/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Using a more robust font-family definition */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* --- Aurora Background & Animation --- */
+        .aurora-blob {
+            position: absolute;
+            filter: blur(80px); /* Creates the soft, blurry effect */
+            opacity: 0.4;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background-color: #4f46e5; /* Indigo */
+            animation: moveBlob1 15s infinite alternate;
+        }
+
+        .blob-2 {
+            width: 350px;
+            height: 350px;
+            background-color: #db2777; /* Fuchsia */
+            animation: moveBlob2 18s infinite alternate;
+        }
+
+        @keyframes moveBlob1 {
+            from { transform: translate(-20%, -10%) rotate(0deg); }
+            to { transform: translate(20%, 10%) rotate(360deg); }
+        }
+
+        @keyframes moveBlob2 {
+            from { transform: translate(20%, 20%) rotate(0deg); }
+            to { transform: translate(-20%, -20%) rotate(360deg); }
+        }
+
+        /* --- On-Load Content Animations --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0; /* Start hidden */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans antialiased overflow-hidden">
+
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div class="aurora-blob blob-1"></div>
+        <div class="aurora-blob blob-2"></div>
+    </div>
+
+    <div class="relative min-h-screen flex flex-col items-center justify-center p-4 z-10">
+        <main class="text-center flex flex-col items-center">
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight max-w-3xl animate-fadeInUp" style="animation-delay: 200ms;">
+                The Future of Campus Finance.
+            </h1>
+            
+            <p class="text-lg md:text-xl text-gray-400 mt-6 max-w-xl mx-auto animate-fadeInUp" style="animation-delay: 400ms;">
+                Get early access. Join the waitlist with your student email to be first in line.
+            </p>
+
+            <div class="mt-10 w-full max-w-lg animate-fadeInUp" style="animation-delay: 600ms;">
+                 <div class="bg-white/10 backdrop-blur-md p-2 rounded-xl shadow-2xl border border-white/20">
+                    <iframe data-tally-src="https://tally.so/embed/nWV5Ea?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="150" frameborder="0" marginheight="0" marginwidth="0" title="Campus Waitlist Signup" class="rounded-lg"></iframe>
+                    <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+                 </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="scripts/main.js"></script>
+    
+    <script>
+        (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,b){var d=b.split(".");2==d.length&&(a=a[d[0]],b=d[1]);a[b]=function(){a.push([b].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var b="mixpanel";"mixpanel"!==c&&(b+="."+c);a||(b+=" (stub)");return b};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_out".split(" ");
+        for(h=0;h<i.length;h++)g(a,i[h]);b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"httpsa://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+        mixpanel.init("85e4203392bee848370a7c1a3dcf9386");
+    </script>
+
+    <script>
+        window.intercomSettings = {
+            api_base: "https://api-iam.intercom.io",
+            app_id: "ru7st3vr"
+        };
+    </script>
+    <script>
+        (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/' + w.intercomSettings.app_id;var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+    </script>
+</body>
+</html>
